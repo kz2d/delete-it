@@ -1,0 +1,235 @@
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  min-height: 900px;
+}
+
+.style-reset {
+  list-style: none;
+}
+
+/* navigation */
+
+.logo {
+  width: 120px;
+  margin: 0;
+  font-family: Playfair Display;
+  font-size: 18px;
+}
+
+.candle-header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 42px;
+  margin-bottom: 136px;
+}
+
+.header-list {
+  display: flex;
+  gap: 36px;
+  margin: 0;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.nav-btn {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+/* main */
+
+.main-block {
+  display: flex;
+  gap: 132px;
+  margin-bottom: 100px;
+  height: 800px;
+}
+
+.left-block {
+  width: 494px;
+}
+
+.main-text {
+  margin-bottom: 90px;
+}
+
+.title {
+  margin-bottom: 20px;
+  margin-top: 0;
+  font-family: Playfair Display;
+  font-size: 52px;
+  font-weight: 400;
+}
+
+.subtitle {
+  margin-bottom: 34px;
+  font-size: 18px;
+  font-family: Poppins;
+}
+
+.btn-position {
+  display: flex;
+  margin-bottom: 46px;
+  gap: 38px;
+}
+
+.btn-style {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+}
+
+.new-btn {
+  color: black;
+}
+
+.announcement-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 53px;
+  padding: 43px 40px;
+  margin-bottom: 30px;
+  border: solid 1px black;
+  border-radius: 20px;
+  box-shadow: 15px 9px 30px 0px rgba(160, 160, 160, 0.25);
+}
+
+.price-style {
+  font-family: Poppins;
+  font-size: 45px;
+  font-weight: 100;
+}
+
+.announcement-text {
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: px;
+}
+
+.img-vector {
+  background-image: url(images/candle3.png);
+  background-repeat: no-repeat;
+  width: 495px;
+  height: 500px;
+  background-size: contain;
+}
+
+.right-block {
+  position: relative;
+  display: grid;
+  grid-template-areas: "a b" "a c";
+  flex-grow: 1;
+  gap: 29px;
+}
+
+.offer-block {
+  display: flex;
+  margin: 16px;
+  padding: 7px 17px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  background: #FFF;
+}
+
+.candle-title {
+  margin: 0;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.candle-subtitle {
+  margin: 0;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #505050;
+}
+
+.offer-price {
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.offer-img {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.img-candles {
+  background-image: url(images/candle2.png);
+  background-position: 52%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 19px;
+}
+
+.img-diffuser {
+  background-image: url(images/diffuser.png);
+  background-position: 52%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 19px;
+}
+
+.img-body {
+  background-image: url(images/body.png);
+  background-position: 52%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 19px;
+}
+
+.img-automobile {
+  background-image: url(images/automobile.png);
+  background-position: 52%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 19px;
+}
+
+.border-line {
+  width: 1px;
+  height: 90%;
+  background: #E4E4E4;
+}
+
+/* footer */
+
+.footer-text {
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+.underline {
+      height: 1px;
+    background: black;
+    width: 0;
+    transition:width 0.5s;
+}
+
+.underline.current {
+  width:40%;
+}
+
+.nav-btn:hover .underline{
+width:30%;
+}
