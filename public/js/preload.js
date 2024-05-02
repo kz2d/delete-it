@@ -3,8 +3,13 @@ window.onload = () => {
     window.performance.timing.domContentLoadedEventEnd -
     window.performance.timing.navigationStart;
 
-  console.log("loaded");
+  let server =
+    performance.getEntriesByType('navigation')[0].serverTiming[0].duration;
 
-  document.getElementById("load-time").textContent =
-    "load time " + loadTime + " ms";
+  document.getElementById('load-time').textContent =
+    'load time(client) ' +
+    loadTime +
+    ' ms, load time(server) ' +
+    server +
+    ' ms';
 };

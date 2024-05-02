@@ -1,0 +1,17 @@
+{{#unless logged}}
+<div class="login">
+<form>
+<input type=""><input type="password">
+
+<button>
+Login
+</button>
+</form>
+</div>
+{{/unless}}
+
+{{#if logged}}
+<div class="logged">
+    logged in as a {{user}}
+</div>
+{{/if}}

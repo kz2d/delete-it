@@ -1,49 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
-    <title>Candle store</title>
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="store" />
-    <meta name="description" content="candles" />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400&display=swap"
-      rel="stylesheet"
-    />
-    <script src="/js/preload.js"></script>
+    {{>meta}}
+    {{> styles}}
   </head>
 
   <body class="wrapper">
-    <header class="candle-header">
-      <h1 class="logo">Candle Flame</h1>
-      <nav class="list-block">
-        <ul class="header-list style-reset">
-          <li>
-            <a href="index.html" class="nav-btn"
-              >HOME
-              <div class="underline current"></div
-            ></a>
-          </li>
-          <li>
-            <a href="products.html" class="nav-btn"
-              >PRODUCTS
-
-              <div class="underline"></div>
-            </a>
-          </li>
-          <li>
-            <a href="gallery.html" class="nav-btn"
-              >GALLERY
-
-              <div class="underline"></div>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="main-block">
+  {{> header current="index"}}
+  {{#>container}}
       <section class="left-block">
         <div class="main-text">
           <h1 class="title">Natural scented candles</h1>
@@ -105,10 +69,9 @@
           </div>
         </div>
       </section>
-    </main>
-    <footer>
-      <p class="footer-text">© Candle Flame Website</p>
-      <span id="load-time"></span>
-    </footer>
+      {{/container}}
+
+  {{> footer }}
+
   </body>
 </html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+{{>meta}}
+{{> styles}}
+</head>
+
+<body class="wrapper">
+{{> header current="products" }}
+{{#>container}}
+<section class="right-block">
+{{#each items}}
+{{#with this}}
+{{>item}}
+{{/with}}
+{{/each}}
+</section>
+
+
+{{/container}}
+
+{{> footer }}
+
+</body>
+</html>
+
+     

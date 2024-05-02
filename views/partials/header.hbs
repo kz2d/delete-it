@@ -1,0 +1,28 @@
+<header class="candle-header">
+  <h1 class="logo">Candle Flame</h1>
+  {{>status}}
+  <nav class="list-block">
+    <ul class="header-list style-reset">
+      <li>
+        <a href="/" class="nav-btn"
+          >HOME
+          <div class="underline {{#ifEquals current "index"}}current{{/ifEquals}}"></div
+        ></a>
+      </li>
+      <li>
+        <a href="products" class="nav-btn"
+          >PRODUCTS
+
+          <div class="underline {{#ifEquals current "products"}}current{{/ifEquals}}"></div>
+        </a>
+      </li>
+      <li>
+        <a href="gallery" class="nav-btn"
+          >GALLERY
+
+          <div class="underline {{#ifEquals current "gallery"}}current{{/ifEquals}}"></div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
