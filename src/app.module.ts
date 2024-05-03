@@ -5,10 +5,13 @@ import { ConfigModule } from '@nestjs/config';
 import { ItemsModule } from './items/items.module';
 import { HistoryModule } from './history/history.module';
 import { UsersModule } from './users/users.module';
+import { PrismaService } from './prisma.service';
+import { ItemsService } from './items/items.service';
+import { AllExceptionsFilter } from './exception-filter';
 
 @Module({
   imports: [ConfigModule.forRoot(), ItemsModule, HistoryModule, UsersModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, PrismaService, ItemsService, AllExceptionsFilter],
 })
 export class AppModule { }

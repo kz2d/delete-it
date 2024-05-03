@@ -16,14 +16,14 @@ export class UsersController {
 
   @ApiResponse({ status: 200, type: [UserDto] })
   @Get()
-  findAll(): UserDto[] {
+  findAll(): Promise<UserDto[]> {
     return this.usersService.findAll();
   }
 
   @ApiResponse({ status: 200, type: UserDto })
 
   @Get(':id')
-  findOne(@Param('id') id: string): UserDto {
+  findOne(@Param('id') id: string): Promise<UserDto> {
     return this.usersService.findOne(+id);
   }
 
@@ -31,7 +31,7 @@ export class UsersController {
 
   @ApiBearerAuth()
   @Delete(':id')
-  remove(@Param('id') id: string): UserDto {
+  remove(@Param('id') id: string): Promise<UserDto> {
     return this.usersService.remove(+id);
   }
 }

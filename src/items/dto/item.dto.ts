@@ -1,4 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { Prisma, Item } from "@prisma/client";
 
 export class ItemDto {
 
@@ -6,31 +7,35 @@ export class ItemDto {
         example: "Candle",
         type: String,
     })
-    title: String;
+    title: string;
 
     @ApiProperty({
         example: "A big one",
         type: String,
     })
-    subtitle: String;
+    subtitle: string;
 
     @ApiProperty({
         example: "automobile",
         type: String,
         description: "name of default image"
     })
-    img: String;
+    img: string;
 
     @ApiProperty({
         example: 123,
         type: Number,
     })
-    price: Number;
+    price: number;
 
     @ApiProperty({
         example: 1,
         type: Number,
     })
-    supplier: Number;
+    supplier: number;
+
+    static fromPrisma(prisma: Item): ItemDto {
+        return { ...prisma, supplier: prisma.supplierId, price: prisma.price.toNumber() };
+    };
 }
 

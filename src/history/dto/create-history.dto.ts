@@ -6,40 +6,40 @@ class HistoryItem {
         example: "Candle",
         type: String,
     })
-    title: String;
+    title: string;
 
     @ApiProperty({
         example: "A big one",
         type: String,
     })
-    subtitle: String;
+    subtitle: string;
 
     @ApiProperty({
         example: "automobile",
         type: String,
         description: "name of default image"
     })
-    img: String;
+    img: string;
 
     @ApiProperty({
         example: 123,
         type: Number,
     })
-    price: Number;
+    price: number;
 
     @ApiProperty({
         example: 123,
         type: Number,
         description: "number of items in cart of this type"
     })
-    count: Number;
+    count: number;
 
     @ApiProperty({
         example: 123,
         type: Number,
         description: "item id, that was bought"
     })
-    item: Number;
+    item: number;
 }
 
 export class CreateHistoryDto {
@@ -49,7 +49,7 @@ export class CreateHistoryDto {
         type: Number,
         description: "user id"
     })
-    user: Number;
+    user: number;
 
     @ApiProperty({
         type: [HistoryItem],

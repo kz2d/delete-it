@@ -5,10 +5,12 @@ import { ConfigService } from '@nestjs/config';
 import { join } from 'path';
 import * as hbs from 'hbs';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { AppController } from './app.controller';
+import { AllExceptionsFilter } from './exception-filter';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
+
+  app.useGlobalFilters(app.get(AllExceptionsFilter));
 
   const config = new DocumentBuilder()
     .setTitle('Rektal candle')

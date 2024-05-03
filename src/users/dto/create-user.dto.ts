@@ -5,17 +5,17 @@ export class CreateUserDto {
         example: "lol@example.com",
         type: String,
     })
-    email: String;
+    email: string;
 
     @ApiProperty({
         example: "kz2d",
         type: String,
     })
-    name: String;
+    name: string;
 
     @ApiProperty({
         example: "strong_password123*",
         type: String,
     })
-    password: String;
+    password: string;
 }

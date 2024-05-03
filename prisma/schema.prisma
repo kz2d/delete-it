@@ -44,9 +44,9 @@ model HistoryItem {
 
   itemId  Int?
     
-  history  History?    @relation(fields: [historyId], references: [id])
+  history  History    @relation(fields: [historyId], references: [id])
 
-  historyId  Int?
+  historyId  Int
 }
 
 model Supplier {
@@ -62,8 +62,8 @@ model Item {
   subtitle  String
   img       String
   price Decimal
-  supplier  Supplier?    @relation(fields: [supplierId], references: [id])
+  supplier  Supplier    @relation(fields: [supplierId], references: [id])
 
-  supplierId  Int?
+  supplierId  Int
   history  HistoryItem[]
 }

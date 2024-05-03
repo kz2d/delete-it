@@ -17,19 +17,19 @@ export class HistoryController {
 
   @ApiResponse({ status: 200, type: [HistoryDto] })
   @Get()
-  findAll(): HistoryDto[] {
+  findAll(): Promise<HistoryDto[]> {
     return this.historyService.findAll();
   }
 
   @ApiResponse({ status: 200, type: HistoryDto })
   @Get(':id')
-  findOne(@Param('id') id: string): HistoryDto {
+  findOne(@Param('id') id: string): Promise<HistoryDto> {
     return this.historyService.findOne(+id);
   }
 
   @ApiResponse({ status: 200, type: HistoryDto })
   @Delete(':id')
-  remove(@Param('id') id: string): HistoryDto {
+  async remove(@Param('id') id: string): Promise<HistoryDto> {
     return this.historyService.remove(+id);
   }
 }

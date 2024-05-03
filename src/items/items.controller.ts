@@ -16,12 +16,12 @@ export class ItemsController {
 
   @ApiResponse({ status: 200, type: [ItemDto] })
   @Get()
-  findAll(): ItemDto[] {
+  findAll(): Promise<ItemDto[]> {
     return this.itemsService.findAll();
   }
   @ApiResponse({ status: 200, type: ItemDto })
   @Get(':id')
-  findOne(@Param('id') id: string): ItemDto {
+  findOne(@Param('id') id: string): Promise<ItemDto> {
     return this.itemsService.findOne(+id);
   }
 }

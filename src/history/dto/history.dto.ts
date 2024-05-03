@@ -1,4 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { History, HistoryItem as HistoryItemPrism } from "@prisma/client";
 
 class HistoryItem {
 
@@ -6,20 +7,20 @@ class HistoryItem {
         example: "Candle",
         type: String,
     })
-    title: String;
+    title: string;
 
     @ApiProperty({
         example: "A big one",
         type: String,
     })
-    subtitle: String;
+    subtitle: string;
 
     @ApiProperty({
         example: "automobile",
         type: String,
         description: "name of default image"
     })
-    img: String;
+    img: string;
 
     @ApiProperty({
         example: 123,
@@ -49,11 +50,29 @@ export class HistoryDto {
         type: Number,
         description: "user id"
     })
-    user: Number;
+    user: number;
+
+    @ApiProperty({
+        example: 123,
+        type: Number,
+        description: "total price"
+    })
+    totalPrice: number;
+
+    @ApiProperty({
+        example: Date.now(),
+        type: Date,
+        description: "date of purchase"
+    })
+    time: Date;
 
     @ApiProperty({
         type: [HistoryItem],
         description: "Items in cart"
     })
     items: HistoryItem[];
+
+    static fromPrisma(prisma: History & { items: HistoryItemPrism[] }): HistoryDto {
+        return { ...prisma, user: prisma.userId, totalPrice: prisma.totalPrice.toNumber(), items: prisma.items.map(x => ({ ...x, item: x.itemId, price: x.price.toNumber() })) }
+    }
 }
