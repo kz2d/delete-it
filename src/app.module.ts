@@ -8,9 +8,10 @@ import { UsersModule } from './users/users.module';
 import { PrismaService } from './prisma.service';
 import { ItemsService } from './items/items.service';
 import { AllExceptionsFilter } from './exception-filter';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), ItemsModule, HistoryModule, UsersModule],
+  imports: [ConfigModule.forRoot(), ItemsModule, HistoryModule, UsersModule, ChatModule],
   controllers: [AppController],
   providers: [AppService, PrismaService, ItemsService, AllExceptionsFilter],
 })
